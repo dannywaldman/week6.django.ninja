@@ -1,0 +1,47 @@
+.wrapper {
+    width: 1050px;
+    margin: auto;
+}
+
+p {
+    margin: 0;
+}
+h2 {
+    font-size: 20px;
+}
+
+.init {
+    color: blue;
+}
+
+.plus {
+  color: green;
+ }
+
+ .minus {
+  color: red;
+ }
+
+.action {
+    display: inline-block;
+    width: 245px;
+    padding-left: 12px;
+    border: 1px solid black;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.activities {
+    height: 200px;
+    border: 1px solid black;
+    overflow-y: scroll;
+    padding: 5px;
+}
+
+.wrapper span {
+    border: 1px solid black;
+    width: 200px;
+    display: inline-block;
+    padding: 10px;
+    margin-bottom: 5px;
+}

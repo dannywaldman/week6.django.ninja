@@ -1,0 +1,49 @@
+{% load staticfiles %}
+<html>
+	<head>
+		<title>Ninja Money</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+	</head>
+	<body>
+		<div class="wrapper">
+			<div>Your Gold: <span>{{ request.session.gold }}</span></div>
+			<div class="action">
+				<h1>Farm</h1>
+				<h2>(earns 10-20 golds)</h2>
+				<form action="/gold/process_money/farm" method="post">
+                    {% csrf_token %}
+					<input type="submit" value="Find Gold!">
+				</form>
+			</div>
+			<div class="action">
+				<h1>Cave</h1>
+				<h2>(earns 5-10 golds)</h2>
+				<form action="/gold/process_money/cave" method="post">
+                    {% csrf_token %}
+					<input type="submit" value="Find Gold!">
+				</form>
+			</div>
+			<div class="action">
+				<h1>House</h1>
+				<h2>(earns 2-5 golds)</h2>
+				<form action="/gold/process_money/house" method="post">
+                    {% csrf_token %}
+					<input type="submit" value="Find Gold!">
+				</form>
+			</div>
+			<div class="action">
+				<h1>Casino</h1>
+				<h2>(earns/takes 0-50 golds)</h2>
+				<form action="/gold/process_money/casison" method="post">
+                    {% csrf_token %}
+					<input type="submit" value="Find Gold!">
+				</form>
+			</div>
+			<div class="activities">
+			{% for log in request.session.logs %}
+            <p class="{{ log.0 }}">{{ log.2 }} ({{ log.1 }})</p>
+			{% endfor %}
+			</div>
+		</div>
+	</body>
+</html>
